@@ -1,5 +1,5 @@
 // Master function for handling elements related to the audio player (audio element, play button, play/pause image, progress bar container, progress bar fill). This allows multiple audio players to be created and hosted on the same page without duplicating the code. Each button exists purely for user convenience and interaction.
-function createPlayer(audioEl, playBtn, playImg, progressContainer, progressFill, replayIconUrl, playIconUrl, pauseIconUrl) {
+function createPlayer(audioEl, playBtn, playImg, progressContainer, progressFill, replayIconUrl, pauseIconUrl) {
     playBtn.addEventListener("click", () => {
         if (audioEl.paused || audioEl.ended) {
             if (audioEl.ended) {
@@ -20,8 +20,7 @@ function createPlayer(audioEl, playBtn, playImg, progressContainer, progressFill
 
     // When a track finishes without repeat turned on, a distinct 'replay' icon is shown instead of the usual 'play' icon. This signals to the user that clicking it will restart the song rather than resume it, and also tells them they've listened to the full song.
     audioEl.addEventListener("ended", () => {
-        if (!audioEl.loop) {
-            playImg.src = replayIconUrl;
+            playImg.src = playIconUrl;
         }
     });
 
@@ -58,7 +57,6 @@ createPlayer(
     heroPlayImg,
     document.querySelector("#hero-progress-bar"),
     document.querySelector("#hero-progress-bar-fill"),
-    "https://icons8.com/icon/91644/replay",
     "https://img.icons8.com/ios-glyphs/30/play--v1.png",
     "https://img.icons8.com/ios-glyphs/30/pause--v1.png"
 );
@@ -73,7 +71,6 @@ createPlayer(
     albumPlayImg,
     document.querySelector("#album-progress-bar"),
     document.querySelector("#album-progress-bar-fill"),
-    "https://icons8.com/icon/91644/replay",
     "https://img.icons8.com/ios-glyphs/30/play--v1.png",
     "https://img.icons8.com/ios-glyphs/30/pause--v1.png"
 );
