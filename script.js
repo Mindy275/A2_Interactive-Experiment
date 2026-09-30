@@ -1,5 +1,5 @@
 // Master function for handling elements related to the audio player (audio element, play button, play/pause image, progress bar container, progress bar fill). This allows multiple audio players to be created and hosted on the same page without duplicating the code. Each button exists purely for user convenience and interaction.
-function createPlayer(audioEl, playBtn, playImg, progressContainer, progressFill, replayIconUrl, pauseIconUrl) {
+function createPlayer(audioEl, playBtn, playImg, progressContainer, progressFill, playIconUrl, pauseIconUrl) {
     playBtn.addEventListener("click", () => {
         if (audioEl.paused || audioEl.ended) {
             if (audioEl.ended) {
@@ -16,12 +16,6 @@ function createPlayer(audioEl, playBtn, playImg, progressContainer, progressFill
     audioEl.addEventListener("timeupdate", () => {
         const value = (audioEl.currentTime / audioEl.duration) * 100;
         progressFill.style.width = value + "%";
-    });
-
-    // When a track finishes without repeat turned on, a distinct 'replay' icon is shown instead of the usual 'play' icon. This signals to the user that clicking it will restart the song rather than resume it, and also tells them they've listened to the full song.
-    audioEl.addEventListener("ended", () => {
-            playImg.src = playIconUrl;
-        }
     });
 
     progressContainer.addEventListener("click", (event) => {
