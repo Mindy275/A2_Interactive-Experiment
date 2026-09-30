@@ -73,7 +73,7 @@ createPlayer(
     albumPlayImg,
     document.querySelector("#album-progress-bar"),
     document.querySelector("#album-progress-bar-fill"),
-    "PASTE_REAL_REPLAY_ICON_URL_HERE",
+    "https://icons8.com/icon/91644/replay",
     "https://img.icons8.com/ios-glyphs/30/play--v1.png",
     "https://img.icons8.com/ios-glyphs/30/pause--v1.png"
 );
