@@ -12,20 +12,20 @@
 @font-face {
   font-family: "Source Serif 4";
   font-weight: 200 900;
-  src: url("assets/fonts/SourceSerif4-VariableFont_opsz,wght.ttf") format("truetype");
+  src: url("assets/fonts/Source_Serif_4/SourceSerif4-VariableFont_opsz\,wght.ttf") format("truetype");
 }
 
 @font-face {
   font-family: "Source Serif 4";
   font-style: italic;
   font-weight: 200 900;
-  src: url("assets/fonts/SourceSerif4-Italic-VariableFont_opsz,wght.ttf") format("truetype");
+  src: url("assets/fonts/Source_Serif_4/SourceSerif4-Italic-VariableFont_opsz\,wght.ttf") format("truetype");
 }
 /* Source Serif 4 (SIL Open Font License, via Google Fonts), self-hosted rather than linked through an external stylesheet, to comply with the assignment's no-external-stylesheets rule. This was chosen as a close, and most importantly, available equivalent to Droid Serif (the typeface used in KYRA's own EP materials) after Droid Serif was found to have been removed from Google's active font catalogue. */
 
 @font-face {
   font-family: "Zeyada";
-  src: url("assets/fonts/Zeyada-Regular.ttf") format("truetype");
+  src: url("assets/fonts/Zeyada/Zeyada-Regular.ttf") format("truetype");
 }
 /* Zeyada handwriting font by Kavoon (SIL Open Font License, via Google Fonts), self-hosted here rather than linked via Google Fonts CDN to comply with the assignment's no-external-stylesheets rule. Used for decorative background quotes to give a handwritten, personal feel matching KYRA's intimate tone. They should feel like notes written in the background, rather than formal text. */
 
@@ -235,6 +235,7 @@ nav a {
 .album-player {
   max-width: none;
   width: 100%;
+  margin-top: 1.5rem;
 }
 
 .progress-bar {
@@ -283,10 +284,6 @@ nav a {
   color: var(--color-bg);
 }
 
-.album-player {
-  margin-top: 1.5rem;
-}
-
 .track-info {
   text-align: center;
   color: var(--color-accent-secondary);
@@ -321,6 +318,10 @@ nav a {
   font-family: inherit;
 }
 
+.links {
+  margin-bottom: 3rem;
+}
+
 /* Footer styling */
 footer {
   background-color: var(--color-panel);
@@ -329,6 +330,40 @@ footer {
   padding: 10px 0;
   width: 100%;
 }
+
+/* Footer text sized down by the golden ratio. This keeps the same proportional system used for KYRA's name in the hero, just applied in reverse for de-emphasis. */
+footer p {
+  font-size: calc(1rem / var(--golden-ratio));
+}
+
+/* Graffiti quote styling. These are positioned absolutely to sit behind the main content, and are rotated slightly to give a more casual, handwritten feel. The opacity is reduced to make them feel like background notes rather than formal text. */
+.about,
+.album,
+.links {
+  position: relative;
+}
+
+.graffiti-quote {
+  position: absolute;
+  font-family: "Zeyada", cursive;
+  color: var(--color-quote);
+  opacity: 0.5;
+  font-size: 2rem;
+  pointer-events: none;
+  width: 220px;
+}
+
+.graffiti-left {
+  left: -12vw;
+}
+
+.graffiti-right {
+  right: -20vw;
+}
+
+.rotate-1 { transform: rotate(-8deg); }
+.rotate-2 { transform: rotate(6deg); }
+.rotate-3 { transform: rotate(-5deg); }
 
 /* Responsive Design to control layout on smaller screens. However, for optimal viewing experience a larger screen is recommended */
 @media (max-width: 700px) {
@@ -347,5 +382,10 @@ footer {
 
 .content-wrap {
   max-width: 90%;
+}
+
+/* Hide graffiti quotes on smaller screens to prevent clutter and maintain readability. */
+.graffiti-quote {
+  display: none;
 }
 }
