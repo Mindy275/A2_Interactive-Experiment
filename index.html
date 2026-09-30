@@ -10,47 +10,110 @@
     <script src="script.js" defer=""></script>
   </head>
   <body>
-    <!-- Header Section -->
-    <header>
-      <h1>KYRA</h1>
-    </header>
-
-    <!-- Navigation Section -->
+     
+<!-- Navigation section moved above the header so it stays fixed and visible at all times, rather than scrolling away with the page content. -->
     <nav>
       <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Videos</a></li>
-        <li><a href="#">Music</a></li>
-        <li><a href="#">Playlists</a></li>
-        <!-- Add or remove navigation items as needed -->
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#album">Album</a></li>
+        <li><a href="#links">Links</a></li>
       </ul>
     </nav>
 
-    <!-- Main Content Section -->
-    <main class="container">
-      <!-- Media Player Section -->
-      <div class="media-player">
-        <video id="custom-video-player">
-          <source src="https://thelongesthumstore.sgp1.cdn.digitaloceanspaces.com/IM-2250/miac.mp4" type="video/mp4">
-        </video>
-        <div class="custom-controls">
-          <button id="play-pause-btn" onclick="togglePlayPause()">
-            <img id="play-pause-img" src="https://img.icons8.com/ios-glyphs/30/play--v1.png" alt="Play Button" width="24" height="24">
-          </button>
-          <!-- add the missing buttons or functionality here -->
-          <div class="progress-bar">
-            <span id="progress-bar-fill"></span>
-          </div>
-        </div>
-      </div>
 
-      <!-- Additional Content Section -->
-      <section>
-        <h2>Additional Content</h2>
-        <p>This is where you can showcase any other relevant content.</p>
-        <!-- Add more content as needed -->
-      </section>
-    </main>
+<!-- Header section now functions as the page's "hook". Everything inside it is visible immediately on load, with no scrolling required, so a first time visitor sees KYRA's image, name, and a playable track straight away. -->    
+<div class="content-wrap">
+    <header id="hero" class="hero">
+        <img src="assets/images/kyra-hero.png" alt="KYRA" class="kyra-hero-img">
+        
+        <!-- Media Player Section -->
+        <div class="media-player">
+            <audio id="custom-video-player">
+            <source src="https://res.cloudinary.com/xdp1p4i5/video/upload/v1790706651/Dont_Let_Go_Master_v1_5.05.2025_St.mp3" type="audio/mpeg">
+            </audio>
+            <div class="custom-controls">
+            <button id="play-pause-btn" onclick="togglePlayPause()">
+                <img id="play-pause-img" src="https://img.icons8.com/ios-glyphs/30/play--v1.png" alt="Play Button" width="24" height="24">
+            </button>
+            <!-- add the missing buttons or functionality here -->
+            <div class="progress-bar">
+                <span id="progress-bar-fill"></span>
+            </div>
+            </div>
+        </div>
+
+            <p class="tagline">
+                <span class="artist-name">KYRA</span><br>
+                Singer-Songwriter | Indie-Soul | Melbourne, Australia
+            </p>
+        </header>
+</div>
+        <!-- Main Content Section -->
+    <div class="content-wrap">
+        <main class="container">
+        <section id="about" class="about">
+                <h2>About</h2>
+                <div class="about-content">
+                    <img src="assets/images/kyra-abt.png" alt="KYRA" class="about-img">
+                    <div class="about-text">
+                        <p class="p1">French-Australian artist KYRA is a Melbourne-based singer, songwriter, and
+            musician whose artistry lives at the intersection of jazz warmth, soulful
+            introspection, and indie authenticity. Her music explores the complexities of
+            emotions, relationships, and self-growth, transforming personal experiences into
+            songs that resonate deeply. Inspired by artists like Amy Winehouse, Alicia Keys,
+            Gigi Perez, and Adele, KYRA's sound is intimate and emotionally rich, with lyrics
+            that read like diary entries and melodies that linger long after the last note.</p>
+                        <p class="p2">In 2019, she joined her first official band, Controlled Chaos, recording and
+            releasing their debut single 'Burnt' in 2021, followed by 3 more in singles in the
+
+            following years. The band began gaining recognition after performing at large-
+            scale events such as GarageBand at Federation Square (2022) and Twilight Sounds
+
+            Festival (2023), where they opened for Mahalia Barnes & The SoulMates before a
+            crowd of over 5,000 people.</p>
+                        <p class="p3">After years of collaboration, KYRA is now carving out her own solo identity,
+            combining her jazz and soul roots with a contemporary indie edge. Her live studio album captures her evolution as an artist, weaving
+            together stories of love, reflection, and resilience with the warmth and honesty
+            that define her sound.</p>
+                </div>
+             </div>
+        </section>
+
+            <section id="album" class="album">
+                <h2>In the Wake of Love</h2>
+                <div class="album-content">
+                    <div class="album-text">
+                        <p>KYRA's debut album, 'In the Wake of Love', is an 8-song album that captures the
+            complexity of love, growth, and human emotion. Recorded live in studio with a
+            four-piece band, the album blends rich instrumentation with KYRA's warm,
+            expressive vocals, creating a sound that is both personal and cinematic. The
+            album's narrative arcs through change, self-discovery, and love, offering listeners
+            an intimate journey from start to finish.</p>
+                        </div>
+                    <img src="assets/images/In-the-Wake-of-Love.png" alt="In the Wake of Love album cover" class="album-cover">
+                </div>
+                <div class="track-list">
+                    <!-- TODO: track entries, populated via JS from your track data array -->
+                </div>
+            </section>
+
+            <section id="links" class="links">
+                <h2>Listen &amp; Connect</h2>
+                <div class="links-content">
+                    <img src="assets/images/kyra-stage.png" alt="KYRA performing live" class="stage-img">
+                    <div class="links-text">
+                        <ul class="streaming-links">
+                            <li><a href="https://open.spotify.com/artist/7iOG6njMdhvCOOwfYuXa2Q?si=J_MWZiHsT4WAOkbV8W0rQA&nd=1&dlsi=bef375433bc54a8c" target="_blank">Spotify</a></li>
+                            <li><a href="https://music.apple.com/au/album/dont-let-go-single/1819872295" target="_blank">Apple Music</a></li>
+                            <li><a href="https://soundcloud.com/kyramusique?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing" target="_blank">Soundcloud</a></li>
+                        </ul>
+                        <p class="contact">Bookings &amp; inquiries: <a href="mailto:contactkyramusic@gmail.com">contactkyramusic@gmail.com</a> · <a href="https://instagram.com/kyra.musique" target="_blank">@kyra.musique</a></p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
 
     <!-- Footer Section -->
     <footer>
