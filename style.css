@@ -217,11 +217,24 @@ nav a {
   background-color: var(--color-accent-primary);
   color: var(--color-text);
   border: none;
-  padding: 8px 12px;
+  width: 40px;
+  height: 40px;
+  padding: 0;
   cursor: pointer;
-  font-size: 16px;
   display: flex;
   align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+#hero-repeat-btn.active,
+#album-repeat-btn.active {
+  background-color: var(--color-accent-secondary);
+}
+
+.album-player {
+  max-width: none;
+  width: 100%;
 }
 
 .progress-bar {
@@ -233,6 +246,8 @@ nav a {
   margin-top: 10px;
   overflow: hidden;
   cursor: pointer;
+  flex: 1;
+
 }
 
 .progress-bar span {
@@ -245,6 +260,67 @@ nav a {
   transition: width 0.1s linear;
 }
 
+.track-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.track-btn {
+  background: var(--color-panel);
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+  padding: 0.75rem 1rem;
+  text-align: left;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+.track-btn.active {
+  background: var(--color-accent-primary);
+  color: var(--color-bg);
+}
+
+.album-player {
+  margin-top: 1.5rem;
+}
+
+.track-info {
+  text-align: center;
+  color: var(--color-accent-secondary);
+  margin-top: 0.5rem;
+}
+
+.lyrics-display {
+  white-space: pre-line;
+  margin-top: 1.5rem;
+  line-height: 1.8;
+  display: none;
+  text-align: center;
+  color: var(--color-accent-secondary);
+}
+
+.lyrics-display strong {
+    font-weight: 700;
+}
+
+.lyrics-display.visible {
+  display: block;
+}
+
+.lyrics-toggle {
+  display: block;
+  margin: 1.5rem auto 0;
+  background: var(--color-panel);
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+  padding: 0.6rem 1.2rem;
+  cursor: pointer;
+  font-family: inherit;
+}
+
 /* Footer styling */
 footer {
   background-color: var(--color-panel);
@@ -254,21 +330,22 @@ footer {
   width: 100%;
 }
 
+/* Responsive Design to control layout on smaller screens. However, for optimal viewing experience a larger screen is recommended */
 @media (max-width: 700px) {
 .about-content,
 .album-content,
 .links-content {
-    flex-direction: column;
+  flex-direction: column;
 }
 
 .about-img,
 .album-cover,
 .stage-img {
-    width: 100%;
-    max-width: 100%;
+  width: 100%;
+  max-width: 100%;
 }
 
 .content-wrap {
-    max-width: 90%;
+  max-width: 90%;
 }
 }

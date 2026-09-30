@@ -27,21 +27,24 @@
     <header id="hero" class="hero">
         <img src="assets/images/kyra-hero.png" alt="KYRA" class="kyra-hero-img">
         
-        <!-- Media Player Section -->
+        <!-- Hero Media Player Section -->
         <div class="media-player">
             <audio id="custom-video-player">
-            <source src="https://res.cloudinary.com/xdp1p4i5/video/upload/v1790706651/Dont_Let_Go_Master_v1_5.05.2025_St.mp3" type="audio/mpeg">
+                <source src="https://res.cloudinary.com/xdp1p4i5/video/upload/v1790706651/Dont_Let_Go_Master_v1_5.05.2025_St.mp3" type="audio/mpeg">
             </audio>
             <div class="custom-controls">
-            <button id="play-pause-btn" onclick="togglePlayPause()">
-                <img id="play-pause-img" src="https://img.icons8.com/ios-glyphs/30/play--v1.png" alt="Play Button" width="24" height="24">
-            </button>
-            <!-- add the missing buttons or functionality here -->
-            <div class="progress-bar">
-                <span id="progress-bar-fill"></span>
-            </div>
+                <button id="play-pause-btn" onclick="togglePlayPause()">
+                    <img id="play-pause-img" src="https://img.icons8.com/ios-glyphs/30/play--v1.png" alt="Play Button" width="24" height="24">
+                </button>
+                <button id="hero-repeat-btn">
+                    <img src="https://img.icons8.com/ios-glyphs/30/repeat.png" alt="Repeat" width="24" height="24">
+                </button>
+                <div class="progress-bar" id="hero-progress-bar">
+                    <span id="hero-progress-bar-fill"></span>
+                </div>
             </div>
         </div>
+        <p class="track-info">"Don't Let Go" | Released June 2025</p>
 
             <p class="tagline">
                 <span class="artist-name">KYRA</span><br>
@@ -49,7 +52,8 @@
             </p>
         </header>
 </div>
-        <!-- Main Content Section -->
+
+<!-- Main Content Section -->
     <div class="content-wrap">
         <main class="container">
         <section id="about" class="about">
@@ -93,8 +97,41 @@
                         </div>
                     <img src="assets/images/In-the-Wake-of-Love.png" alt="In the Wake of Love album cover" class="album-cover">
                 </div>
+
                 <div class="track-list">
-                    <!-- TODO: track entries, populated via JS from your track data array -->
+                    <!-- populated by JS -->
+                </div>
+
+             <!-- Album Media Player Section -->
+                <div class="media-player album-player">
+                    <audio id="album-audio-player">
+                        <source src="" type="audio/mpeg">
+                    </audio>
+                    <div class="custom-controls">
+                        <button id="album-prev-btn">
+                            <img src="https://img.icons8.com/ios-glyphs/30/skip-to-start--v1.png" alt="Previous Track" width="24" height="24">
+                        </button>
+                        <button id="album-play-pause-btn">
+                            <img id="album-play-pause-img" src="https://img.icons8.com/ios-glyphs/30/play--v1.png" alt="Play Button" width="24" height="24">
+                        </button>
+                        <button id="album-next-btn">
+                            <img src="https://img.icons8.com/ios-glyphs/30/end.png" alt="Next Track" width="24" height="24">
+                        </button>
+                        <button id="album-shuffle-btn">
+                            <img src="https://img.icons8.com/ios-glyphs/30/shuffle.png" alt="Shuffle" width="24" height="24">
+                        </button>
+                        <button id="album-repeat-btn">
+                            <img src="https://img.icons8.com/ios-glyphs/30/repeat.png" alt="Repeat" width="24" height="24">
+                        </button>
+                        <div class="progress-bar" id="album-progress-bar">
+                            <span id="album-progress-bar-fill"></span>
+                        </div>
+                    </div>
+                </div>
+                    <button id="lyrics-toggle-btn" class="lyrics-toggle">Show Lyrics</button>
+                    <div class="lyrics-display" id="lyrics-display">
+                        <!-- updates to match whichever track is selected -->
+                    </div>
                 </div>
             </section>
 
